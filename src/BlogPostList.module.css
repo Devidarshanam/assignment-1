@@ -1,28 +1,102 @@
-/* BlogPostList.module.css */
-.blogPostList {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 10px;
+.blogPostItem {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  font-family: sans-serif;
 }
 
-.noPosts {
+.deleteButton {
+  background-color: #ff0000;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+.deleteButton:focus {
+  outline: 2px solid #007bff;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.dialog {
+  background-color: #ffffff;
+  max-width: 400px;
+  width: 90%;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
   font-family: Arial, sans-serif;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+p {
   font-size: 16px;
   color: #666666;
-  padding: 20px;
+  margin-bottom: 30px;
 }
 
-/* Tablet view (769px to 1199px) */
-@media (min-width: 769px) and (max-width: 1199px) {
-  .blogPostList {
-    grid-template-columns: repeat(2, 1fr);
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 2px solid #007bff;
+}
+
+button:first-of-type {
+  background-color: #cccccc;
+  color: black;
+}
+
+button:last-of-type {
+  background-color: #ff0000;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
   }
-}
 
-/* Desktop view (1200px and above) */
-@media (min-width: 1200px) {
-  .blogPostList {
-    grid-template-columns: repeat(3, 1fr);
+  .dialog {
+    width: 90%;
+  }
+
+  .deleteButton {
+    width: 100%;
+    min-height: 44px;
   }
 }
