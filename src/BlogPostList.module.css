@@ -1,0 +1,28 @@
+/* BlogPostList.module.css */
+.blogPostList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 10px;
+}
+
+.noPosts {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #666666;
+  padding: 20px;
+}
+
+/* Tablet view (769px to 1199px) */
+@media (min-width: 769px) and (max-width: 1199px) {
+  .blogPostList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop view (1200px and above) */
+@media (min-width: 1200px) {
+  .blogPostList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
